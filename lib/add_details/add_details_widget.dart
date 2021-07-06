@@ -20,7 +20,7 @@ class AddDetailsWidget extends StatefulWidget {
 }
 
 class _AddDetailsWidgetState extends State<AddDetailsWidget> {
-  DetailsRecord new_details;
+  DetailsRecord newDetails;
   String uploadedFileUrl = '';
   TextEditingController textController1;
   TextEditingController textController2;
@@ -603,7 +603,7 @@ class _AddDetailsWidgetState extends State<AddDetailsWidget> {
                     final detailsRecordReference =
                         DetailsRecord.collection.doc();
                     await detailsRecordReference.set(detailsRecordData);
-                    new_details = DetailsRecord.getDocumentFromData(
+                    newDetails = DetailsRecord.getDocumentFromData(
                         detailsRecordData, detailsRecordReference);
                     await showDialog(
                       context: context,
