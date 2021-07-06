@@ -16,12 +16,6 @@ class PendingWidget extends StatefulWidget {
 }
 
 class _PendingWidgetState extends State<PendingWidget> {
-  TextEditingController textController10;
-  TextEditingController textController7;
-  TextEditingController textController8;
-  TextEditingController textController9;
-  TextEditingController textController11;
-  TextEditingController textController12;
   TextEditingController textController1;
   TextEditingController textController2;
   TextEditingController textController3;
@@ -39,12 +33,6 @@ class _PendingWidgetState extends State<PendingWidget> {
     textController4 = TextEditingController();
     textController5 = TextEditingController();
     textController6 = TextEditingController();
-    textController10 = TextEditingController();
-    textController7 = TextEditingController();
-    textController8 = TextEditingController();
-    textController9 = TextEditingController();
-    textController11 = TextEditingController();
-    textController12 = TextEditingController();
   }
 
   @override
@@ -336,274 +324,62 @@ class _PendingWidgetState extends State<PendingWidget> {
               return Container(
                 width: double.infinity,
                 decoration: BoxDecoration(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                      child: Image.network(
-                        listViewDetailsRecord.image,
-                        width: double.infinity,
-                        height: 250,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                      child: TextFormField(
-                        controller: textController1,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Description',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.primaryColor,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Image.network(
+                          listViewDetailsRecord.image,
+                          width: double.infinity,
+                          height: 250,
+                          fit: BoxFit.contain,
                         ),
+                      ),
+                      Text(
+                        listViewDetailsRecord.description,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.primaryColor,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
                         ),
-                        keyboardType: TextInputType.multiline,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextFormField(
-                        controller: textController2,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Project cost',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 5),
-                        ),
+                      Text(
+                        listViewDetailsRecord.projectCost,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
                         ),
-                        keyboardType: TextInputType.number,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextFormField(
-                        controller: textController3,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Tax',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 5),
-                        ),
+                      Text(
+                        listViewDetailsRecord.tax,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
                         ),
-                        keyboardType: TextInputType.number,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextFormField(
-                        controller: textController4,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Earning',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                        ),
+                      Text(
+                        listViewDetailsRecord.earning,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
                         ),
-                        keyboardType: TextInputType.number,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextFormField(
-                        controller: textController5,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Due Date',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                        ),
+                      Text(
+                        listViewDetailsRecord.dueDate,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
                         ),
-                        keyboardType: TextInputType.datetime,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                      child: TextFormField(
-                        controller: textController6,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          hintText: 'Gig',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                        child: Text(
+                          listViewDetailsRecord.gig,
+                          style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
                           ),
                         ),
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               );
             },
