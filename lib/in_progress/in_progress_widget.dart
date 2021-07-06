@@ -15,14 +15,43 @@ class InProgressWidget extends StatefulWidget {
 }
 
 class _InProgressWidgetState extends State<InProgressWidget> {
+  TextEditingController textController10;
+  TextEditingController textController7;
+  TextEditingController textController8;
+  TextEditingController textController9;
+  TextEditingController textController11;
+  TextEditingController textController12;
+  TextEditingController textController1;
+  TextEditingController textController2;
+  TextEditingController textController3;
+  TextEditingController textController4;
+  TextEditingController textController5;
+  TextEditingController textController6;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    textController1 = TextEditingController();
+    textController2 = TextEditingController();
+    textController3 = TextEditingController();
+    textController4 = TextEditingController();
+    textController5 = TextEditingController();
+    textController6 = TextEditingController();
+    textController10 = TextEditingController();
+    textController7 = TextEditingController();
+    textController8 = TextEditingController();
+    textController9 = TextEditingController();
+    textController11 = TextEditingController();
+    textController12 = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF6A0393),
         iconTheme: IconThemeData(color: FlutterFlowTheme.secondaryColor),
         automaticallyImplyLeading: false,
         leading: InkWell(
@@ -31,17 +60,15 @@ class _InProgressWidgetState extends State<InProgressWidget> {
           },
           child: Icon(
             Icons.menu,
-            color: FlutterFlowTheme.primaryColor,
+            color: FlutterFlowTheme.tertiaryColor,
             size: 24,
           ),
         ),
         title: Text(
-          'IN PROGRESS',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Poppins',
-            color: FlutterFlowTheme.primaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          'In Progress',
+          style: FlutterFlowTheme.title1.override(
+            fontFamily: 'Karla',
+            color: FlutterFlowTheme.tertiaryColor,
           ),
         ),
         actions: [],
@@ -58,7 +85,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 60, 0, 50),
+                padding: EdgeInsets.fromLTRB(0, 100, 0, 50),
                 child: Container(
                   width: 80,
                   height: 80,
@@ -95,7 +122,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                         children: [
                           Icon(
                             Icons.home_rounded,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -104,7 +131,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                               'HOME',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -130,7 +157,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                       children: [
                         Icon(
                           Icons.event_note,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -139,7 +166,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                             'NOTES',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -164,7 +191,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                       children: [
                         Icon(
                           Icons.person,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -173,7 +200,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                             'PROFILE',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -207,7 +234,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                         children: [
                           Icon(
                             Icons.settings,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -216,7 +243,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                               'SETTINGS',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -253,7 +280,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                         children: [
                           Icon(
                             Icons.login_outlined,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -262,7 +289,7 @@ class _InProgressWidgetState extends State<InProgressWidget> {
                               'LOGOUT',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -277,6 +304,542 @@ class _InProgressWidgetState extends State<InProgressWidget> {
             ],
           ),
         ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.vertical,
+        children: [
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Image.network(
+                    'https://picsum.photos/seed/51/600',
+                    width: double.infinity,
+                    height: 250,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController1,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Description',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.primaryColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.multiline,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController2,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Project cost',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController3,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Tax',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController4,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Earning',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController5,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Due Date',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.datetime,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: TextFormField(
+                    controller: textController6,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Gig',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Image.network(
+                    'https://picsum.photos/seed/51/600',
+                    width: double.infinity,
+                    height: 250,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController7,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Description',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.primaryColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    keyboardType: TextInputType.multiline,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController8,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Project cost',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController9,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Tax',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController10,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Earning',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: TextFormField(
+                    controller: textController11,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Due Date',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    keyboardType: TextInputType.datetime,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: TextFormField(
+                    controller: textController12,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Gig',
+                      hintStyle: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

@@ -1,3 +1,4 @@
+import '../add_details/add_details_widget.dart';
 import '../auth/auth_util.dart';
 import '../cleared/cleared_widget.dart';
 import '../delivered/delivered_widget.dart';
@@ -8,6 +9,7 @@ import '../login/login_widget.dart';
 import '../pending/pending_widget.dart';
 import '../settings/settings_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -25,7 +27,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF6A0393),
         iconTheme: IconThemeData(color: FlutterFlowTheme.secondaryColor),
         automaticallyImplyLeading: false,
         leading: InkWell(
@@ -34,17 +36,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           },
           child: Icon(
             Icons.menu,
-            color: FlutterFlowTheme.primaryColor,
+            color: FlutterFlowTheme.tertiaryColor,
             size: 24,
           ),
         ),
         title: Text(
           'ORDERS',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Poppins',
-            color: FlutterFlowTheme.primaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          style: FlutterFlowTheme.title1.override(
+            fontFamily: 'Karla',
+            color: FlutterFlowTheme.tertiaryColor,
           ),
         ),
         actions: [],
@@ -53,10 +53,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       ),
       backgroundColor: FlutterFlowTheme.tertiaryColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('FloatingActionButton pressed ...');
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddDetailsWidget(),
+            ),
+          );
         },
-        backgroundColor: FlutterFlowTheme.primaryColor,
+        backgroundColor: Color(0xFF6A0393),
         elevation: 8,
         child: Icon(
           Icons.add,
@@ -74,7 +79,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 60, 0, 50),
+                padding: EdgeInsets.fromLTRB(0, 100, 0, 50),
                 child: Container(
                   width: 80,
                   height: 80,
@@ -111,7 +116,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         children: [
                           Icon(
                             Icons.home_rounded,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -120,7 +125,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               'HOME',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -146,7 +151,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Icon(
                           Icons.event_note,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -155,7 +160,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             'NOTES',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -180,7 +185,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Icon(
                           Icons.person,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -189,7 +194,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             'PROFILE',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -223,7 +228,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         children: [
                           Icon(
                             Icons.settings,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -232,7 +237,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               'SETTINGS',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -269,7 +274,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         children: [
                           Icon(
                             Icons.login_outlined,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -278,7 +283,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               'LOGOUT',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -313,77 +318,141 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => PendingWidget(),
+                      Align(
+                        alignment: Alignment(-0.05, 0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PendingWidget(),
+                                  ),
+                                );
+                              },
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Container(
+                                  width: 80,
+                                  height: 80,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color(0xFFF4281D),
+                                        Color(0xFF6A0393)
+                                      ],
+                                      stops: [0, 1],
+                                      begin: Alignment(0.31, -1),
+                                      end: Alignment(-0.31, 1),
+                                    ),
+                                    borderRadius: BorderRadius.circular(30),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.pending_outlined,
+                                        color: FlutterFlowTheme.tertiaryColor,
+                                        size: 65,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
+                            Align(
                               alignment: Alignment(0, 0),
-                              child: Text(
-                                'Pending',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: Text(
+                                  'Pending',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF6A0393),
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => InProgressWidget(),
+                                ),
+                              );
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFFF4281D),
+                                      Color(0xFF6A0393)
+                                    ],
+                                    stops: [0, 1],
+                                    begin: Alignment(0, -1),
+                                    end: Alignment(0, 1),
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FaIcon(
+                                      FontAwesomeIcons.chartLine,
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      size: 50,
+                                    )
+                                  ],
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => InProgressWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
+                          Align(
+                            alignment: Alignment(0, 0),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                               child: Text(
                                 'In Progress',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
+                                  color: Color(0xFF6A0393),
+                                  fontSize: 22,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
-                          ),
-                        ),
+                          )
+                        ],
                       )
                     ],
                   ),
@@ -399,77 +468,133 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DeliveredWidget(),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DeliveredWidget(),
+                                ),
+                              );
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFFF4281D),
+                                      Color(0xFF6A0393)
+                                    ],
+                                    stops: [0, 1],
+                                    begin: Alignment(0.31, -1),
+                                    end: Alignment(-0.31, 1),
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.done_all,
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      size: 60,
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
                           ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
+                          Align(
+                            alignment: Alignment(0, 0),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                               child: Text(
                                 'Delivered',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
+                                  color: Color(0xFF6A0393),
+                                  fontSize: 22,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
-                          ),
-                        ),
+                          )
+                        ],
                       ),
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ClearedWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
-                              child: Text(
-                                'Cleared',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ClearedWidget(),
+                                ),
+                              );
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFFF4281D),
+                                      Color(0xFF6A0393)
+                                    ],
+                                    stops: [0, 1],
+                                    begin: Alignment(0, -1),
+                                    end: Alignment(0, 1),
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FaIcon(
+                                      FontAwesomeIcons.donate,
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      size: 50,
+                                    )
+                                  ],
                                 ),
                               ),
                             ),
                           ),
-                        ),
+                          Align(
+                            alignment: Alignment(0, 0),
+                            child: Text(
+                              'Cleared',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF6A0393),
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          )
+                        ],
                       )
                     ],
                   ),

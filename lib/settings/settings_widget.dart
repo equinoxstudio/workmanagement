@@ -21,7 +21,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF6A0393),
         iconTheme: IconThemeData(color: FlutterFlowTheme.secondaryColor),
         automaticallyImplyLeading: false,
         leading: InkWell(
@@ -30,17 +30,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
           },
           child: Icon(
             Icons.menu,
-            color: FlutterFlowTheme.primaryColor,
+            color: FlutterFlowTheme.tertiaryColor,
             size: 24,
           ),
         ),
         title: Text(
           'SETTINGS',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Poppins',
-            color: FlutterFlowTheme.primaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          style: FlutterFlowTheme.title1.override(
+            fontFamily: 'Karla',
+            color: FlutterFlowTheme.tertiaryColor,
           ),
         ),
         actions: [],
@@ -57,7 +55,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 60, 0, 50),
+                padding: EdgeInsets.fromLTRB(0, 100, 0, 50),
                 child: Container(
                   width: 80,
                   height: 80,
@@ -94,7 +92,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         children: [
                           Icon(
                             Icons.home_rounded,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -103,7 +101,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               'HOME',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -129,7 +127,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       children: [
                         Icon(
                           Icons.event_note,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -138,7 +136,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             'NOTES',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -163,7 +161,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       children: [
                         Icon(
                           Icons.person,
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFF6A0393),
                           size: 24,
                         ),
                         Padding(
@@ -172,7 +170,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             'PROFILE',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF6A0393),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -206,7 +204,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         children: [
                           Icon(
                             Icons.settings,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -215,7 +213,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               'SETTINGS',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -252,7 +250,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         children: [
                           Icon(
                             Icons.login_outlined,
-                            color: FlutterFlowTheme.primaryColor,
+                            color: Color(0xFF6A0393),
                             size: 24,
                           ),
                           Padding(
@@ -261,7 +259,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               'LOGOUT',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.primaryColor,
+                                color: Color(0xFF6A0393),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
