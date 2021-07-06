@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "98011983755",
+    "project_id": "workmanagement-e6100",
+    "storage_bucket": "workmanagement-e6100.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98011983755:android:b8ab3ad1ef5ea4e848098e",
+        "android_client_info": {
+          "package_name": "com.flutterflow.workmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98011983755-4p3jc794vl92pn4t91rggm3ftee7nad0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB053YZyS4zu41-uskR4ynu0srjJlyt-Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98011983755-4p3jc794vl92pn4t91rggm3ftee7nad0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

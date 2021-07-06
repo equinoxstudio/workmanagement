@@ -1,6 +1,8 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -194,8 +196,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    final user = await signInWithEmail(
+                                      context,
+                                      emailTextController.text,
+                                      passwordTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
+
+                                    await Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomePageWidget(),
+                                      ),
+                                      (r) => false,
+                                    );
                                   },
                                   text: 'Sign in',
                                   options: FFButtonOptions(
@@ -309,8 +326,22 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             Align(
                                               alignment: Alignment(0, 0),
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  final user =
+                                                      await signInWithGoogle(
+                                                          context);
+                                                  if (user == null) {
+                                                    return;
+                                                  }
+                                                  await Navigator
+                                                      .pushAndRemoveUntil(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          HomePageWidget(),
+                                                    ),
+                                                    (r) => false,
+                                                  );
                                                 },
                                                 text: 'Sign in',
                                                 icon: Icon(
@@ -359,11 +390,32 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Sign Up',
-                                    style: GoogleFonts.getFont(
-                                      'Open Sans',
-                                      fontSize: 14,
+                                  InkWell(
+                                    onTap: () async {
+                                      final user = await createAccountWithEmail(
+                                        context,
+                                        emailTextController.text,
+                                        passwordTextController.text,
+                                      );
+                                      if (user == null) {
+                                        return;
+                                      }
+
+                                      await Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomePageWidget(),
+                                        ),
+                                        (r) => false,
+                                      );
+                                    },
+                                    child: Text(
+                                      'Sign Up',
+                                      style: GoogleFonts.getFont(
+                                        'Open Sans',
+                                        fontSize: 14,
+                                      ),
                                     ),
                                   )
                                 ],

@@ -1,23 +1,20 @@
 import '../auth/auth_util.dart';
-import '../cleared/cleared_widget.dart';
-import '../delivered/delivered_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../in_progress/in_progress_widget.dart';
+import '../home_page/home_page_widget.dart';
 import '../login/login_widget.dart';
-import '../pending/pending_widget.dart';
 import '../settings/settings_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePageWidget extends StatefulWidget {
-  HomePageWidget({Key key}) : super(key: key);
+class DeliveredWidget extends StatefulWidget {
+  DeliveredWidget({Key key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _DeliveredWidgetState createState() => _DeliveredWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _DeliveredWidgetState extends State<DeliveredWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -39,7 +36,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
         ),
         title: Text(
-          'ORDERS',
+          'DELIVERED',
           style: FlutterFlowTheme.bodyText1.override(
             fontFamily: 'Poppins',
             color: FlutterFlowTheme.primaryColor,
@@ -50,19 +47,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         actions: [],
         centerTitle: true,
         elevation: 0,
-      ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('FloatingActionButton pressed ...');
-        },
-        backgroundColor: FlutterFlowTheme.primaryColor,
-        elevation: 8,
-        child: Icon(
-          Icons.add,
-          color: FlutterFlowTheme.tertiaryColor,
-          size: 30,
-        ),
       ),
       drawer: Drawer(
         elevation: 16,
@@ -292,191 +276,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               )
             ],
           ),
-        ),
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Align(
-                alignment: Alignment(0, 0.05),
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => PendingWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
-                              child: Text(
-                                'Pending',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => InProgressWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
-                              child: Text(
-                                'In Progress',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Align(
-                alignment: Alignment(0, -1),
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DeliveredWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
-                              child: Text(
-                                'Delivered',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ClearedWidget(),
-                            ),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0, 0),
-                              child: Text(
-                                'Cleared',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            )
-          ],
         ),
       ),
     );
