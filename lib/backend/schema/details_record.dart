@@ -27,11 +27,11 @@ abstract class DetailsRecord
   String get earning;
 
   @nullable
-  String get gig;
-
-  @nullable
   @BuiltValueField(wireName: 'due_date')
   String get dueDate;
+
+  @nullable
+  String get gig;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -43,8 +43,8 @@ abstract class DetailsRecord
     ..projectCost = ''
     ..tax = ''
     ..earning = ''
-    ..gig = ''
-    ..dueDate = '';
+    ..dueDate = ''
+    ..gig = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('details');
@@ -69,8 +69,8 @@ Map<String, dynamic> createDetailsRecordData({
   String projectCost,
   String tax,
   String earning,
-  String gig,
   String dueDate,
+  String gig,
 }) =>
     serializers.toFirestore(
         DetailsRecord.serializer,
@@ -80,5 +80,5 @@ Map<String, dynamic> createDetailsRecordData({
           ..projectCost = projectCost
           ..tax = tax
           ..earning = earning
-          ..gig = gig
-          ..dueDate = dueDate));
+          ..dueDate = dueDate
+          ..gig = gig));
