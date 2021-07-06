@@ -307,7 +307,10 @@ class _PendingWidgetState extends State<PendingWidget> {
         ),
       ),
       body: StreamBuilder<List<DetailsRecord>>(
-        stream: queryDetailsRecord(),
+        stream: queryDetailsRecord(
+          queryBuilder: (detailsRecord) =>
+              detailsRecord.orderBy('image', descending: true),
+        ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -339,18 +342,19 @@ class _PendingWidgetState extends State<PendingWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Image.network(
-                        'https://picsum.photos/seed/51/600',
+                        listViewDetailsRecord.image,
                         width: double.infinity,
                         height: 250,
                         fit: BoxFit.fill,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
                       child: TextFormField(
                         controller: textController1,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Description',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -394,6 +398,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                         controller: textController2,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Project cost',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -420,6 +425,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                               topRight: Radius.circular(4.0),
                             ),
                           ),
+                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 5),
                         ),
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
@@ -435,6 +441,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                         controller: textController3,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Tax',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -461,6 +468,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                               topRight: Radius.circular(4.0),
                             ),
                           ),
+                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 5),
                         ),
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
@@ -476,6 +484,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                         controller: textController4,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Earning',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -517,6 +526,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                         controller: textController5,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Due Date',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -558,6 +568,7 @@ class _PendingWidgetState extends State<PendingWidget> {
                         controller: textController6,
                         obscureText: false,
                         decoration: InputDecoration(
+                          isDense: true,
                           hintText: 'Gig',
                           hintStyle: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',

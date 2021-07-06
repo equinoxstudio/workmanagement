@@ -11,9 +11,6 @@ abstract class DetailsRecord
   static Serializer<DetailsRecord> get serializer => _$detailsRecordSerializer;
 
   @nullable
-  String get image;
-
-  @nullable
   String get description;
 
   @nullable
@@ -34,17 +31,20 @@ abstract class DetailsRecord
   String get gig;
 
   @nullable
+  String get image;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(DetailsRecordBuilder builder) => builder
-    ..image = ''
     ..description = ''
     ..projectCost = ''
     ..tax = ''
     ..earning = ''
     ..dueDate = ''
-    ..gig = '';
+    ..gig = ''
+    ..image = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('details');
@@ -64,21 +64,21 @@ abstract class DetailsRecord
 }
 
 Map<String, dynamic> createDetailsRecordData({
-  String image,
   String description,
   String projectCost,
   String tax,
   String earning,
   String dueDate,
   String gig,
+  String image,
 }) =>
     serializers.toFirestore(
         DetailsRecord.serializer,
         DetailsRecord((d) => d
-          ..image = image
           ..description = description
           ..projectCost = projectCost
           ..tax = tax
           ..earning = earning
           ..dueDate = dueDate
-          ..gig = gig));
+          ..gig = gig
+          ..image = image));
