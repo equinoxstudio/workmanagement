@@ -337,9 +337,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               child: Material(
                                 color: Colors.transparent,
                                 elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
                                 child: Container(
                                   width: 80,
                                   height: 80,
@@ -353,7 +350,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       begin: Alignment(0.31, -1),
                                       end: Alignment(-0.31, 1),
                                     ),
-                                    borderRadius: BorderRadius.circular(30),
                                     shape: BoxShape.circle,
                                   ),
                                   child: Column(
@@ -404,9 +400,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Material(
                               color: Colors.transparent,
                               elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
                               child: Container(
                                 width: 80,
                                 height: 80,
@@ -420,7 +413,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     begin: Alignment(0, -1),
                                     end: Alignment(0, 1),
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Column(
@@ -484,9 +476,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Material(
                               color: Colors.transparent,
                               elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
                               child: Container(
                                 width: 80,
                                 height: 80,
@@ -500,7 +489,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     begin: Alignment(0.31, -1),
                                     end: Alignment(-0.31, 1),
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Column(
@@ -549,9 +537,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Material(
                               color: Colors.transparent,
                               elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
                               child: Container(
                                 width: 80,
                                 height: 80,
@@ -565,7 +550,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     begin: Alignment(0, -1),
                                     end: Alignment(0, 1),
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Column(
