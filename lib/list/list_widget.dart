@@ -5,17 +5,11 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../home_page/home_page_widget.dart';
 import '../login/login_widget.dart';
 import '../settings/settings_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ListWidget extends StatefulWidget {
-  ListWidget({
-    Key key,
-    this.pending,
-  }) : super(key: key);
-
-  final DocumentReference pending;
+  ListWidget({Key key}) : super(key: key);
 
   @override
   _ListWidgetState createState() => _ListWidgetState();
@@ -308,94 +302,74 @@ class _ListWidgetState extends State<ListWidget> {
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
               children: [
-                StreamBuilder<DetailsRecord>(
-                  stream: DetailsRecord.getDocument(
-                      listViewDetailsRecord.reference),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(child: CircularProgressIndicator());
-                    }
-                    final containerDetailsRecord = snapshot.data;
-                    return Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                              child: Image.network(
-                                containerDetailsRecord.image,
-                                width: double.infinity,
-                                height: 250,
-                                fit: BoxFit.contain,
-                              ),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.description,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.primaryColor,
+                              fontSize: 16,
                             ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-                              child: Text(
-                                containerDetailsRecord.description,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.primaryColor,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Text(
-                                containerDetailsRecord.projectCost,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Text(
-                                containerDetailsRecord.tax,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Text(
-                                containerDetailsRecord.earning,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Text(
-                                containerDetailsRecord.dueDate,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                              child: Text(
-                                containerDetailsRecord.gig,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                ),
-                              ),
-                            )
-                          ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.projectCost,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.tax,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.earning,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.dueDate,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                          child: Text(
+                            listViewDetailsRecord.gig,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 )
               ],
             );
