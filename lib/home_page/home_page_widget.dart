@@ -5,6 +5,7 @@ import '../delivered/delivered_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../in_progress/in_progress_widget.dart';
+import '../list/list_widget.dart';
 import '../login/login_widget.dart';
 import '../pending/pending_widget.dart';
 import '../settings/settings_widget.dart';
@@ -145,28 +146,38 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   decoration: BoxDecoration(),
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.event_note,
-                          color: Color(0xFF6A0393),
-                          size: 24,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text(
-                            'NOTES',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF6A0393),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ListWidget(),
                           ),
-                        )
-                      ],
+                        );
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.event_note,
+                            color: Color(0xFF6A0393),
+                            size: 24,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Text(
+                              'NOTES',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF6A0393),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

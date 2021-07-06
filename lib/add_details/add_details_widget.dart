@@ -330,11 +330,7 @@ class _AddDetailsWidgetState extends State<AddDetailsWidget> {
                       showUploadMessage(context, 'Failed to upload media');
                     }
                   }
-
-                  final detailsRecordData = createDetailsRecordData(
-                    image: uploadedFileUrl,
-                  );
-                  await DetailsRecord.collection.doc().set(detailsRecordData);
+                  await launchURL(uploadedFileUrl);
                 },
                 child: Image.asset(
                   'assets/images/placeholder-image-removebg-preview.png',

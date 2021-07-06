@@ -3,6 +3,7 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../home_page/home_page_widget.dart';
+import '../list/list_widget.dart';
 import '../login/login_widget.dart';
 import '../settings/settings_widget.dart';
 import 'package:flutter/material.dart';
@@ -321,64 +322,91 @@ class _PendingWidgetState extends State<PendingWidget> {
             itemBuilder: (context, listViewIndex) {
               final listViewDetailsRecord =
                   listViewDetailsRecordList[listViewIndex];
-              return Container(
-                width: double.infinity,
-                decoration: BoxDecoration(),
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                        child: Image.network(
-                          listViewDetailsRecord.image,
-                          width: double.infinity,
-                          height: 250,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      Text(
-                        listViewDetailsRecord.description,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.primaryColor,
-                        ),
-                      ),
-                      Text(
-                        listViewDetailsRecord.projectCost,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                      Text(
-                        listViewDetailsRecord.tax,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                      Text(
-                        listViewDetailsRecord.earning,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                      Text(
-                        listViewDetailsRecord.dueDate,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Text(
-                          listViewDetailsRecord.gig,
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
+              return InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListWidget(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: Image.network(
+                            listViewDetailsRecord.image,
+                            width: double.infinity,
+                            height: 250,
+                            fit: BoxFit.contain,
                           ),
                         ),
-                      )
-                    ],
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.description,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.primaryColor,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.projectCost,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.tax,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.earning,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text(
+                            listViewDetailsRecord.dueDate,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                          child: Text(
+                            listViewDetailsRecord.gig,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               );
